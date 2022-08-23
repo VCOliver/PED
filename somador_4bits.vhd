@@ -10,15 +10,15 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity somador_3bits is
+entity somador_4bits is
     Port ( Av : in std_logic_vector (3 downto 0);
            Bv : in std_logic_vector (3 downto 0);
            Cin : in STD_LOGIC;
            Sv : out std_logic_vector (3 downto 0);
            Cout : out STD_LOGIC);
-end somador_3bits;
+end somador_4bits;
 
-architecture Behavioral of somador_3bits is
+architecture Behavioral of somador_4bits is
     signal aux : std_logic_vector (2 downto 0);
     
      component  somador_1bit
