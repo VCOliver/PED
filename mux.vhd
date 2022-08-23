@@ -26,6 +26,6 @@ begin
 with Sel select
   
   S  <= A when '0',
-  B when others;
+        B when others;
 
 end Behavioral;
