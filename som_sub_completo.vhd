@@ -62,7 +62,7 @@ signal compB, M : std_logic_vector(3 downto 0);
 begin   
 
 -- compB <= B;
-    Sel_LED <= Sel
+    Sel_LED <= '1'
 
 comp: comp2 port map (B => B, Bb => compB); -- complemento de 2
 
