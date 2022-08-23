@@ -23,8 +23,8 @@ begin
 
 --  S <= (Sign_A xor Sign_B);
     
-    S <= (Sign_A and not Sign_S) or (not Sign_A and b) or (not Sign_B and Sign_S);
+--  S <= (Sign_A and not Sign_S) or (not Sign_A and b) or (not Sign_B and Sign_S);
     
---  S <= (Sign_A xnor Sign_B) xor (Sign_A and Sign_S);
+    S <= (Sign_A xnor Sign_B) and (Sign_A and not Sign_S);
 
 end Behavioral;
