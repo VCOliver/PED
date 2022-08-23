@@ -11,8 +11,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity detector_overflow is
-    Port ( MSB_A : in STD_LOGIC;
-           MSB_B : in STD_LOGIC;
+    Port ( Sign_A : in STD_LOGIC;
+           Sign_B : in STD_LOGIC;
            S : out STD_LOGIC);
 end detector_overflow;
 
@@ -20,6 +20,6 @@ architecture Behavioral of detector_overflow is
 
 begin
 
-S <= (MSB_A xor MSB_B);
+S <= (Sign_A xor Sign_B);
 
 end Behavioral;
