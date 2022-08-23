@@ -11,7 +11,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity comp2 is
-    Port ( A  : in std_logic_vector (3 downto 0);
+    Port ( 
+           A  : in std_logic_vector (3 downto 0);
            Ab : out std_logic_vector (3 downto 0)
          );
 end comp2;
