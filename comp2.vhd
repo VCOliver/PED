@@ -18,11 +18,12 @@ end comp2;
 
 architecture Behavioral of comp2 is
   
-  signal aux : std_logic_vector(3 downto 0);
+  signal comp1 : std_logic_vector(3 downto 0);
+  signal i     : std_logic_vector(3 downto 0) := "0001";
    
 begin
   
-  aux <= not A;
-  Ab <= std_logic_vector(to_unsigned(to_integer(unsigned( in )) + 1, 4));
+  comp1 <= not A;
+  Ab <= (comp1 + i);
        
 end Behavioral;
