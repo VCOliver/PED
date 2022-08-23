@@ -47,9 +47,6 @@ component comp2
            comp2 : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
--- signal c0,c1,c2,Coutc,ov :std_logic;
--- signal U1,U2,U3,U4,U5,U6 :std_logic_vector(3 downto 0);   
-
 component detector_overflow 
     Port ( Sign_A : in STD_LOGIC;
            Sign_B : in STD_LOGIC;
