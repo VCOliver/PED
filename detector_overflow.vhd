@@ -18,8 +18,6 @@ end detector_overflow;
 
 architecture Behavioral of detector_overflow is
 
-signal soma_A_B : std_logic;
-
 begin
 
 S <= (MSB_A xor MSB_B);
