@@ -16,6 +16,7 @@ entity som_sub_completo is
            Cin : in STD_LOGIC;
            Sel : in std_logic;
            S   : out STD_LOGIC_VECTOR (3 downto 0);
+           Cout: out std_logic;
            OVF : out std_logic);
 end som_sub_completo;
 
@@ -23,24 +24,25 @@ architecture Behavioral of som_sub_completo is
 
 
 Component somador_4bits -- Somador de um bit
-    Port ( Av : in STD_LOGIC;
-           Bv : in STD_LOGIC;
-           Cin : in STD_LOGIC;
-           Sv : out STD_LOGIC;
+    Port (
+           Av   : in STD_LOGIC;
+           Bv   : in STD_LOGIC;
+           Cin  : in STD_LOGIC;
+           Sv   : out STD_LOGIC;
            Cout : out STD_LOGIC);
            
 end Component;
 
 component mux 
-    Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
-           B : in STD_LOGIC_VECTOR (3 downto 0);
+    Port ( A   : in STD_LOGIC_VECTOR (3 downto 0);
+           B   : in STD_LOGIC_VECTOR (3 downto 0);
            Sel : in STD_LOGIC;
-           S : out STD_LOGIC_VECTOR (3 downto 0));
+           S   : out STD_LOGIC_VECTOR (3 downto 0));
           
 end component;
 
 component comp2 
-    Port ( B : in STD_LOGIC_VECTOR (3 downto 0);
+    Port ( B  : in STD_LOGIC_VECTOR (3 downto 0);
            Bb : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
@@ -58,14 +60,14 @@ signal compB, M : std_logic_vector(3 downto 0);
   
 begin   
 
-compB <= B;
+-- compB <= B;
 
 comp: comp2 port map (B => B, Bb => compB); -- complemento de 2
 
 mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
   
   -- Saída
-  sum:  somador_4bit port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => OVF);
+  sum:  somador_4bit port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => Cout);
 
   detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], Sign_S => S[3], S => OVF); --Detector de Overflow
 
