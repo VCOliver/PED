@@ -58,16 +58,16 @@ signal compB, M : std_logic_vector(3 downto 0);
   
 begin   
 
--- compB <= B;
-    Sel_LED <= '1'
 
-comp: comp2 port map (A => B, comp2 => compB); -- complemento de 2
+    Sel_LED <= '1' -- Mostra onde o Switch para operação negativa está
 
-mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
+    comp: comp2 port map (A => B, comp2 => compB); -- complemento de 2
+
+    mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
   
-  -- Saída
-  sum:  somador_4bits port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => Cout);
+    -- Saída
+    sum:  somador_4bits port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => Cout);
 
-  detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], Sign_S => S[3], S => OVF); --Detector de Overflow
+    detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], Sign_S => S[3], S => OVF); --Detector de Overflow
 
 end Behavioral;
