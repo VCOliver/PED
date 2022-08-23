@@ -15,6 +15,7 @@ entity som_sub_completo is
            B   : in STD_LOGIC_VECTOR (3 downto 0);
            Cin : in STD_LOGIC;
            Sel : in std_logic;
+           Sel_LED : out std_logic; -- LED to show where select button is
            S   : out STD_LOGIC_VECTOR (3 downto 0);
            Cout: out std_logic;
            OVF : out std_logic);
@@ -61,6 +62,7 @@ signal compB, M : std_logic_vector(3 downto 0);
 begin   
 
 -- compB <= B;
+    Sel_LED <= Sel
 
 comp: comp2 port map (B => B, Bb => compB); -- complemento de 2
 
