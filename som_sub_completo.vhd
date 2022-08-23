@@ -43,8 +43,8 @@ component mux
 end component;
 
 component comp2 
-    Port ( B  : in STD_LOGIC_VECTOR (3 downto 0);
-           Bb : out STD_LOGIC_VECTOR (3 downto 0));
+    Port ( A  : in STD_LOGIC_VECTOR (3 downto 0);
+           comp2 : out STD_LOGIC_VECTOR (3 downto 0));
 end component;
 
 -- signal c0,c1,c2,Coutc,ov :std_logic;
@@ -64,7 +64,7 @@ begin
 -- compB <= B;
     Sel_LED <= '1'
 
-comp: comp2 port map (B => B, Bb => compB); -- complemento de 2
+comp: comp2 port map (A => B, comp2 => compB); -- complemento de 2
 
 mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
   
