@@ -50,6 +50,7 @@ end component;
 component detector_overflow 
     Port ( Sign_A : in STD_LOGIC;
            Sign_B : in STD_LOGIC;
+           Sign_S : in std_logic;
            S : out STD_LOGIC);
 end component;
 
@@ -66,6 +67,6 @@ mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
   -- Saída
   sum:  somador_4bit port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => OVF);
 
-  detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], S => OVF); --Detector de Overflow
+  detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], Sign_S => S[3], S => OVF); --Detector de Overflow
 
 end Behavioral;
