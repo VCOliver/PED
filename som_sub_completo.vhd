@@ -66,6 +66,6 @@ mux1: mux port map (A => B, B => compB, Sel => Sel, S => M ); --multiplexador
   -- Saída
   sum:  somador_4bit port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => OVF);
 
-  -- detec: detector_dverflow port map (A => c2, B => Coutc, S => OVF); --Detector de Overflow
+  detec: detector_dverflow port map (Sign_A => A[3], Sign_B => M[3], S => OVF); --Detector de Overflow
 
 end Behavioral;
