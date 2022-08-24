@@ -11,10 +11,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity mux is
-    Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
-           B : in STD_LOGIC_VECTOR (3 downto 0);
-           Sel : in STD_LOGIC;
-           S : out STD_LOGIC_VECTOR (3 downto 0));
+    Port ( A   : in STD_LOGIC_VECTOR (3 downto 0);   -- First vector
+           B   : in STD_LOGIC_VECTOR (3 downto 0);   -- Second vector
+           Sel : in STD_LOGIC;                       -- Selects which vector is to be passed
+           S   : out STD_LOGIC_VECTOR (3 downto 0)); -- Exits the chosen vector
            
 end mux;
 
@@ -25,7 +25,7 @@ begin
 
 with Sel select
   
-  S  <= A when '0',
-        B when others;
+  S  <= A when '0', -- Vector A exists when 0 is selected
+        B when others; -- Else B
 
 end Behavioral;
