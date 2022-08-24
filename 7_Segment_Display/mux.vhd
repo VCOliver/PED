@@ -4,8 +4,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity mux is
     Port ( 
-           Sel : in STD_LOGIC_VECTOR (1 downto 0);
-           S : out STD_LOGIC_VECTOR (3 downto 0)
+           Sel : in STD_LOGIC_VECTOR (1 downto 0); -- Select which of the 4 Displays will be on
+           S : out STD_LOGIC_VECTOR (3 downto 0)   -- Decoded vector
     );
 end mux;
 
