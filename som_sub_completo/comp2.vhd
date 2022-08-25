@@ -35,6 +35,6 @@ architecture Behavioral of comp2 is
 begin
   
   comp1 <= not A;
-  comp2 : somador_4bits port map(Av => comp1, Bv => i, Cin => '0', Sv => comp2, Cout => j);
+  comp : somador_4bits port map(Av => comp1, Bv => i, Cin => '0', Sv => comp2, Cout => j);
        
 end Behavioral;
