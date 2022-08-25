@@ -68,6 +68,6 @@ begin
     -- Saída
     sum:  somador_4bits port map( Av => A, Bv => M, Cin => Cin, Sv => S, Cout => Cout); -- Sum
 
-    detec: detector_overflow port map (Sign_A => A[3], Sign_B => M[3], Sign_S => S[3], S => OVF); -- Overflow Detector
+    detec: detector_overflow port map (Sign_A => A(3), Sign_B => M(3), Sign_S => S(3), S => OVF); -- Overflow Detector
 
 end Behavioral;
