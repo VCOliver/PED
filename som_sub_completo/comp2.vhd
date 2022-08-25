@@ -27,7 +27,7 @@ architecture Behavioral of comp2 is
       Port(
           Av : in std_logic_vertor(3 downto 0);
           Bv : in std_logic_vector(3 downto 0);
-          Cin : in std_logic
+          Cin : in std_logic;
           Sv : out std_logic_vector(3 downto 0);
           Cout : out std_logic);
    end component;
@@ -35,6 +35,6 @@ architecture Behavioral of comp2 is
 begin
   
   comp1 <= not A;
-  comp : somador_4bits port map(Av => comp1, Bv => i, Cin => '0', Sv => comp2, Cout => j);
+  comp2 : somador_4bits port map(Av => comp1, Bv => i, Cin => '0', Sv => comp2, Cout => j);
        
 end Behavioral;
