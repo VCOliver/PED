@@ -14,7 +14,7 @@ entity detector_overflow is
     Port ( Sign_A : in STD_LOGIC;
            Sign_B : in STD_LOGIC;
            Sign_S : in std_logic;
-           S : out STD_LOGIC)
+           S : out STD_LOGIC);
 end detector_overflow;
 
 architecture Behavioral of detector_overflow is
