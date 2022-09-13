@@ -48,10 +48,10 @@ architecture Behavioral of master is
         );
     end component;
     
-    component clock50hz
+    component clock200hz
         Port(
             clk : in std_logic;
-            clk_50 : out std_logic
+            clk_200 : out std_logic
         );
     end component;
 
@@ -77,16 +77,16 @@ architecture Behavioral of master is
         );
     end component;
 
-    signal clk_05, clk_50 : std_logic;
+    signal clk_05, clk_200 : std_logic;
     signal A, B, C, D : std_logic_vector(3 downto 0);
 
 begin
 
     clock_05hz : clock05hz port map(clk => clk, clk_05 => clk_05);
-    clock_50hz : clock50hz port map(clk => clk, clk_50 => clk_50);
+    clock_50hz : clock50hz port map(clk => clk, clk_200 => clk_200);
 
     info1 : info port map(clk => clk_05, A => A, B => B, C => C, D => D);
 
-    display1 : display port map(clk => clk_50, A => A, B => B, C => C, D => D, an => an, seg => seg);
+    display1 : display port map(clk => clk_200, A => A, B => B, C => C, D => D, an => an, seg => seg);
 
 end Behavioral;
