@@ -40,6 +40,20 @@ entity master is
 end master;
 
 architecture Behavioral of master is
+    
+    component clock05hz
+        Port(
+            clk : in std_logic;
+            clk_05 : out std_logic
+        );
+    end component;
+    
+    component clock50hz
+        Port(
+            clk : in std_logic;
+            clk_50 : out std_logic
+        );
+    end component;
 
     component display
         Port(
@@ -69,7 +83,7 @@ architecture Behavioral of master is
 begin
 
     clock_05hz : clock05hz port map(clk => clk, clk_05 => clk_05);
-    clock_50hz : clock05hz port map(clk => clk, clk_50 => clk_50);
+    clock_50hz : clock50hz port map(clk => clk, clk_50 => clk_50);
 
     info1 : info port map(clk => clk_05, A => A, B => B, C => C, D => D);
 
