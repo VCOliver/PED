@@ -25,7 +25,7 @@ begin
 
 with Sel select
   
-  S  <= A when '0', -- Vector A exists when 0 is selected
+  S  <= A when '0', -- Vector A exits when 0 is selected
         B when others; -- Else B
 
 end Behavioral;
