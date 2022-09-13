@@ -31,14 +31,14 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity clock50hz is
+entity clock200hz is
     Port(
         clk : in std_logic;
-        clk_50 : out std_logic
+        clk_200 : out std_logic
     );
-end clock50hz;
+end clock200hz;
 
-architecture Behavioral of clock05hz is
+architecture Behavioral of clock200hz is
 
     signal prescaler : integer range 0 to 200_000 := 200_000;
     signal counter : integer range 1 to 200_000 := 1;
@@ -58,6 +58,6 @@ begin
             end if;
         end process;
 
-    clk_50 <= newClock;
+    clk_200 <= newClock;
 
 end Behavioral;
