@@ -29,7 +29,7 @@ architecture Behavioral of comp2 is
           Bv : in std_logic_vector(3 downto 0);
           Cin : in std_logic;
           Sv : out std_logic_vector(3 downto 0);
-          Cout : out std_logic);
+          Cout : out std_logic)
    end component;
    
 begin
