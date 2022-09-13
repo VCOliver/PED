@@ -66,18 +66,18 @@ begin
                          i <= D;
                          an <= "1110";
                          counter <= 1;
-                    when 1 <= -- depois liga o segundo display com o numero C
+                    when 1 => -- depois liga o segundo display com o numero C
                          i <= C;
                          an <= "1101";
                          counter <= 2;
-                    when 2 <= -- depois liga o terceiro display com o numero B
+                    when 2 => -- depois liga o terceiro display com o numero B
                          i <= B;
                          an <= "1011";
                          counter <= 3;   
-                    when 3 <= -- depois liga o quarto display com o numero A
+                    when 3 => -- depois liga o quarto display com o numero A
                          i <= A;
                          an <= "0111";
-                         counter <= 4;  
+                         counter <= 0;  
                 end case;
                 -- counter <= counter + 1;
                 -- if counter = 3 then
