@@ -31,17 +31,17 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity clock05hz is
+entity clock50hz is
     Port(
         clk : in std_logic;
         clk_50 : out std_logic
     );
-end clock05hz;
+end clock50hz;
 
 architecture Behavioral of clock05hz is
 
-    signal prescaler : integer range 0 to 1_000_000 := 100_000_000;
-    signal counter : integer range 1 to 1_000_000 := 1;
+    signal prescaler : integer range 0 to 200_000 := 200_000;
+    signal counter : integer range 1 to 200_000 := 1;
     signal newClock : std_logic := '0';
 
 begin
