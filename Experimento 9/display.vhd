@@ -51,7 +51,7 @@ architecture Behavioral of display is
             seg : out STD_LOGIC_VECTOR (6 downto 0)); -- Decoded vector to light up display LEDs
     end component;
 
-    signal i : std_logic_vector(6 downto 0);
+    signal i : std_logic_vector(3 downto 0);
     signal counter : integer range 0 to 3 := 0;
 
 begin
