@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity display is
   Port (
+    clk : in std_logic;
     A : in std_logic_vector(3 downto 0); -- numero do display 3
     B : in std_logic_vector(3 downto 0); -- numero do display 2
     C : in std_logic_vector(3 downto 0); -- numero do display 1
