@@ -55,18 +55,18 @@ component detector_overflow     -- Instanciating the Overflow detector
            S : out STD_LOGIC);
 end component;
 
-signal compA, compB, N, M : std_logic_vector(3 downto 0); -- Auxiliary signals
+signal compB, N : std_logic_vector(3 downto 0); -- Auxiliary signals
   
 begin   
 
 
     Sel_LED <= '1' -- Turns on the led showing where the "subtraction operation" Switch is
     
-    comp_2: comp port map (A => A, comp2 => compA); -- 2's Complement
+    --comp2: comp port map (A => A, comp2 => compA); -- 2's Complement
 
     comp: comp2 port map (A => B, comp2 => compB); -- 2's Complement
 
-    mux1: mux port map (A => A, B => compA, Sel1 => Sel, S => M ); --multiplexer
+    --mux1: mux port map (A => A, B => compA, Sel1 => Sel, S => M ); --multiplexer
         
     mux2: mux port map (A => B, B => compB, Sel => Sel, S => N ); --multiplexer
   
