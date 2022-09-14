@@ -83,7 +83,7 @@ architecture Behavioral of master is
 begin
 
     clock_05hz : clock05hz port map(clk => clk, clk_05 => clk_05);
-    clock_50hz : clock50hz port map(clk => clk, clk_200 => clk_200);
+    clock_200hz : clock200hz port map(clk => clk, clk_200 => clk_200);
 
     info1 : info port map(clk => clk_05, A => A, B => B, C => C, D => D);
 
