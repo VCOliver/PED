@@ -51,20 +51,20 @@ begin
     x <= to_integer(signed(A));
     y <= to_integer(signed(A));
 
-    S <= to_signed(z);
+    S <= std_logic_vector(to_signed(z, S'length));
 
     sum_sub : process(clk)
         begin
             if rising_edge(clk) then 
                 case Sel is 
-                    when 0 =>
+                    when '0' =>
                         z <= x + y;
                         if z < x then
                             OVF <= '1';
                         else
                             OVF <= '0';
                         end if;
-                    when 1 =>
+                    when '1' =>
                         z <= x - y;
                         if z > x then
                             OVF <= '1';
