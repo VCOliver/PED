@@ -37,6 +37,7 @@ entity full_adder is
         A : in std_logic_vector(3 downto 0);
         B : in std_logic_vector(3 downto 0);
         Sel : in std_logic;
+        OVF : out std_logic;
         S: out std_logic_vector(3 downto 0)
     );
 end full_adder;
@@ -58,9 +59,20 @@ begin
                 case Sel is 
                     when 0 =>
                         z <= x + y;
+                        if z < x then
+                            OVF <= '1';
+                        else
+                            OVF <= '0';
+                        end if;
                     when 1 =>
                         z <= x - y;
+                        if z > x then
+                            OVF <= '1';
+                        else
+                            OVF <= '0';
+                        end if;
                 end case;
+                
             end if;
         end process;
 
