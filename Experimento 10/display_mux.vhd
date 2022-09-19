@@ -43,7 +43,7 @@ entity display_mux is
   );
 end display_mux;
 
-architecture Behavioral of display is
+architecture Behavioral of display_mux is
 
     component seg7_decoder
         Port (
