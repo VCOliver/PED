@@ -9,6 +9,7 @@ entity master is
         B : in std_logic_vector(3 downto 0);
         Sel: in std_logic;
         led: out std_logic;
+        OVF: out std_logic;
         an : out std_logic_vector(3 downto 0);
         seg: out std_logic_vector(6 downto 0)
     );  
@@ -41,6 +42,7 @@ architecture Behavioral of MAXTER is
             A : in std_logic_vector(3 downto 0);
             B : in std_logic_vector(3 downto 0);
             Sel : in std_logic;
+            OVF : out std_logic;
             S: out std_logic_vector(3 downto 0)
         );
     end component;
@@ -54,7 +56,7 @@ begin
  
     display_clock : clock200hz port map(clk => clk, clk_200 => clk_200);
 
-    adder : full_adder port map(clk => clk, A => A, B => B, Sel => Sel, S => D);
+    adder : full_adder port map(clk => clk, A => A, B => B, Sel => Sel, OVF => OVF, S => D);
 
     display : display_mux port map(clk => clk_200, A => A, B => B, C => "1111", D => D, an => an, seg => seg);
     
