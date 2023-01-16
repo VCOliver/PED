@@ -105,7 +105,15 @@ begin
     process(current_state, reset, B, rCount_lt_2k)
     begin
         if reset = '1' then
+            loadwCount <= '0';
+            rstwCount <= '1';
+            loadrCount <= '0';
+            rstrCount <= '1';
+            loadrTime <= '0';
             rstrTime <= '1';
+            loadslow_led <= '0';
+            clrslow_led <= '1';
+            len_led <= '0'; 
         else
             case current_state is
                 when init =>
@@ -133,12 +141,13 @@ begin
                     rstwCount <= '1';
                     if rCount_lt_2k = '0' or B = '1' then
                         loadrCount <= '0';
+                        loadrTime <= '1';
                     else
                         loadrCount <= '1';
+                        loadrTime <= '0';
                     end if;
                     rstrCount <= '0';
-                    loadrTime <= '0';
-                    rstrTime <= '1';
+                    rstrTime <= '0';
                     loadslow_led <= '0';
                     clrslow_led <= '1';
                     len_led <= '1';
