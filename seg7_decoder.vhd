@@ -52,6 +52,7 @@ begin
                 "1111000" when "0111", -- 7
                 "0000000" when "1000", -- 8
                 "0010000" when "1001", -- 9
-                "1111111" when others;   -- Blank
+                "1111111" when others; -- Blank
+                -- "-------" when others; -- Don't care
 
 end Behavioral;
