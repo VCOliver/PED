@@ -92,12 +92,14 @@ begin
         end if;
    end process;
     
-    process(loadrTime, rstrTime)
+    process(loadrTime, rstrTime, clk)
     begin
         if rstrTime = '1' then
             rTime <= (others => '0');
-        elsif rising_edge(loadrTime) then
-            rTime <= std_logic_vector(to_unsigned(rCount, rTime'length));
+        elsif rising_edge(clk) then
+            if loadrTime = '1' then
+                rTime <= std_logic_vector(to_unsigned(rCount, rTime'length));
+            end if;
         end if;
     end process;
 
