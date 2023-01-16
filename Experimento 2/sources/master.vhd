@@ -50,7 +50,7 @@ function to_bcd ( bin : std_logic_vector(10 downto 0) ) return std_logic_vector 
     variable bint : unsigned(10 downto 0) := unsigned(bin);
 
     begin
-        for i in 0 to 10 loop  -- repeating 8 times.
+        for i in 0 to 10 loop  -- repeating 10 times.
             bcd(13 downto 1) := bcd(12 downto 0);  --shifting the bits.
             bcd(0) := bint(10);
             bint(10 downto 1) := bint(9 downto 0);
