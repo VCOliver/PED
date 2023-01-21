@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Victor Cruz de Oliveira
 -- 
 -- Create Date: 05.01.2023 23:40:59
--- Design Name: 
+-- Design Name: display_mux 
 -- Module Name: display_mux - Behavioral
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 
@@ -44,7 +44,13 @@ end display_mux;
 
 architecture Behavioral of display_mux is
 
-    component seg7_decoder
+--    component seg7_decoder
+--        Port (
+--            A   : in STD_LOGIC_VECTOR (3 downto 0); -- Number to be displayed
+--            seg : out STD_LOGIC_VECTOR (6 downto 0)); -- Decoded vector to light up display LEDs
+--    end component;
+    
+    component seg7_HexDecoder
         Port (
             A   : in STD_LOGIC_VECTOR (3 downto 0); -- Number to be displayed
             seg : out STD_LOGIC_VECTOR (6 downto 0)); -- Decoded vector to light up display LEDs
@@ -55,14 +61,14 @@ architecture Behavioral of display_mux is
 
 begin
 
-    decode : seg7_decoder port map (A => i, seg => seg);
-    --decode : seg7_HexDecoder port map (A => i, seg => seg);
+    --decode : seg7_decoder port map (A => i, seg => seg);
+    decode : seg7_HexDecoder port map (A => i, seg => seg);
 
     display_on : process(clk, rst)
         begin
             if rst = '1' then
                 an <= "1111";
-                i <= (other => '0');
+                i <= (others => '0');
             elsif rising_edge(clk) then
                 case counter is
                     when "00" => -- primeiro liga o primeiro display com o numero D
