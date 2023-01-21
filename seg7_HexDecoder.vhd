@@ -1,12 +1,12 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Victor Cruz de Oliveira
 -- 
 -- Create Date: 05.01.2023 23:40:59
--- Design Name: 
--- Module Name: seg7_decoder - Behavioral
+-- Design Name: seg7_HexDecoder
+-- Module Name: seg7_HexDecoder - Behavioral
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Basys3
 -- Tool Versions: 
 -- Description: 
 -- 
@@ -31,12 +31,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity seg7_decoder is
+entity seg7_HexDecoder is
     Port ( A : in STD_LOGIC_VECTOR (3 downto 0);
            seg : out STD_LOGIC_VECTOR (6 downto 0));
-end seg7_decoder;
+end seg7_HexDecoder;
 
-architecture Behavioral of seg7_decoder is
+architecture Behavioral of seg7_HexDecoder is
 
 begin
 
